@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  web:
+    build: '.'
+    ports:
+      - "4000:4000"
+    volumes:
+      - /opt/app/assets/node_modules
+      - /opt/app/deps
+      - .:/opt/app
+    depends_on:
+      - db
+    environment:
+      MIX_ENV: 'dev'
+    env_file:
+      - .env
+  db:
+    image: postgres:alpine
+    ports:
+      - 5432:5432
