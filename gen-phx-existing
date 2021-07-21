@@ -2,11 +2,6 @@
 
 # Usage: gen-phx [appname]
 
-# --live for LiveView
-# I want it. If you don't, remove it.
-mix phx.new --live $1
-cd $1
-
 # copy the phx-docker directory files
 cp $PHOENIX_DOCKER_GENERATOR/{.env,Dockerfile,docker-compose.yml} . 
 
@@ -16,3 +11,6 @@ sed -i -e 's/hostname: "localhost"/hostname: "db"/g' config/dev.exs
 
 # run ecto.create inside the web container
 docker-compose run web mix ecto.create
+
+# run migrations, if they exist
+docker-compose run web mix ecto.migrate
