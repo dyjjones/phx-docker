@@ -1,13 +1,12 @@
-For setting up a docker development environment for Elixir & Phoenix.
+### **For setting up a docker development environment for Elixir & Phoenix.**
 
-Set PHOENIX_DOCKER_GENERATOR to the path of this folder, for example if it's at `$HOME/repos/phx-docker-gen`, then put this in your .{z,bash}rc file:
+* Set `PHOENIX_DOCKER_GENERATOR` to the path of this folder, for example if it's at `$HOME/repos/phx-docker-gen`, then put this in your .{z,bash}rc file:
 `export PHOENIX_DOCKER_GENERATOR=$HOME/repos/phx-docker`
+* Then stick the file `gen-phx` in your path.
 
-Then stick the file `gen-phx` in your path.
+Alternatively, just copy the files yourself from this directory to your phoenix project base directory.
 
-Alternatively, just copy the files yourself.
-
-In config/dev.exs change "hostname" from "localhost" to "db", or whatever you named the db service in docker-compose.yml, if you changed that.
+* In config/dev.exs change `"hostname"` from `"localhost"` to `"db"`, or whatever you named the db service in docker-compose.yml, if you changed that.
 
 https://96codes.dev/elixir-phoenix-development-using-docker-and-docker-compose
 
